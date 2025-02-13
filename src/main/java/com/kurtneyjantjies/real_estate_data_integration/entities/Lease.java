@@ -1,4 +1,4 @@
-package entities;
+package com.kurtneyjantjies.real_estate_data_integration.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.FutureOrPresent;
@@ -8,6 +8,7 @@ import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
@@ -33,6 +34,7 @@ public class Lease {
      * The Property associated with the Lease.
      * The Lease must be linked to an existing Property.
      */
+    @Setter
     @ManyToOne
     @JoinColumn(name = "property_id", nullable = false)
     @NotNull(message = "Property is required")
@@ -76,5 +78,6 @@ public class Lease {
      */
     @OneToMany(mappedBy = "lease", cascade = CascadeType.ALL)
     private List<Transaction> transactions;
+
 
 }

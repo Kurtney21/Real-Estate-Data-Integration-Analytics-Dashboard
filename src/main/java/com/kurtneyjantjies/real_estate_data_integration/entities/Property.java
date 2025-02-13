@@ -1,4 +1,4 @@
-package entities;
+package com.kurtneyjantjies.real_estate_data_integration.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
